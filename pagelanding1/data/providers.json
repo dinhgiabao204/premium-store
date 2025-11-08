@@ -1,0 +1,54 @@
+{
+  "providers": [
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "base": 80000,
+      "domain": "netflix.com",
+      "logo": "https://logo.clearbit.com/netflix.com",
+      "description": "Xem phim & series không giới hạn với chất lượng 4K HDR"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube Premium",
+      "base": 45000,
+      "domain": "youtube.com",
+      "logo": "https://logo.clearbit.com/youtube.com",
+      "description": "Xem video không quảng cáo, tải offline & YouTube Music miễn phí"
+    },
+    {
+      "id": "spotify",
+      "name": "Spotify",
+      "base": 35000,
+      "domain": "spotify.com",
+      "logo": "https://logo.clearbit.com/spotify.com",
+      "description": "Nghe nhạc không quảng cáo, chất lượng cao & tải offline"
+    },
+    {
+      "id": "galaxy",
+      "name": "Galaxy Play",
+      "base": 80000,
+      "domain": "galaxyplay.vn",
+      "logo": "https://logo.clearbit.com/samsung.com",
+      "description": "Kho giải trí khổng lồ với phim Việt, Hàn, Trung & thể thao"
+    },
+    {
+      "id": "canva",
+      "name": "Canva Pro",
+      "base": 16000,
+      "domain": "canva.com",
+      "logo": "https://logo.clearbit.com/canva.com",
+      "only12": true,
+      "isYearly": true,
+      "description": "Thiết kế chuyên nghiệp với hàng triệu template & ảnh premium"
+    },
+    {
+      "id": "vieon",
+      "name": "VieON",
+      "base": 70000,
+      "domain": "vieon.vn",
+      "logo": "https://logo.clearbit.com/vieon.vn",
+      "description": "Nền tảng giải trí số 1 Việt Nam - Phim, live TV & thể thao"
+    }
+  ]
+}

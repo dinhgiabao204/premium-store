@@ -1,0 +1,26 @@
+{
+  "name": "pagelanding1",
+  "version": "1.0.0",
+  "description": "A landing page for selling subscriptions to social media apps like Netflix, Spotify, Vieon, Galaxy, YouTube Premium, and Canva.",
+  "main": "index.html",
+  "scripts": {
+    "build": "sh scripts/build.sh",
+    "start": "live-server"
+  },
+  "keywords": [
+    "landing page",
+    "subscriptions",
+    "social media",
+    "Netflix",
+    "Spotify",
+    "Vieon",
+    "Galaxy",
+    "YouTube Premium",
+    "Canva"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
