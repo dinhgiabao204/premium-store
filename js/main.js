@@ -1,7 +1,12 @@
 // This file contains the JavaScript code for the landing page, handling interactivity, animations, and any dynamic content.
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const providersUrl = "./data/providers.json"; // Bỏ "pagelanding1/"
+  // Sửa đường dẫn cho GitHub Pages
+  const providersUrl = "./data/providers.json"; // ✅ Đúng cho root deployment
+
+  // Nếu repo name là "premium-store", có thể cần:
+  // const providersUrl = "/premium-store/data/providers.json";
+
   const container = document.getElementById("providers");
   const heroStarting = document.getElementById("heroStarting");
 
@@ -76,15 +81,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Load and render providers
   async function loadProviders() {
     try {
+      console.log("Fetching providers from:", providersUrl); // Debug log
       const res = await fetch(providersUrl);
-      if (!res.ok) throw new Error("Cannot load providers");
-      const data = await res.json();
 
-      // Fix: data is already an array, not an object with 'providers' property
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      }
+
+      const data = await res.json();
+      console.log("Loaded data:", data); // Debug log
+
+      // Fix: handle both array and object with providers property
       const list = Array.isArray(data) ? data : data.providers || [];
 
       if (list.length === 0) {
-        throw new Error("No providers found");
+        throw new Error("No providers found in JSON");
       }
 
       container.innerHTML = "";
@@ -103,8 +114,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Animate cards on scroll
       animateOnScroll();
     } catch (error) {
-      container.innerHTML = `<div class="col-12"><div class="alert alert-danger"><i class="fa fa-exclamation-triangle me-2"></i>Không thể tải danh sách nhà cung cấp. Vui lòng thử lại sau.<br><small class="text-muted">${error.message}</small></div></div>`;
       console.error("Load providers error:", error);
+      container.innerHTML = `
+        <div class="col-12">
+          <div class="alert alert-danger">
+            <i class="fa fa-exclamation-triangle me-2"></i>
+            <strong>Không thể tải danh sách nhà cung cấp.</strong><br>
+            <small class="text-muted">Lỗi: ${error.message}</small><br>
+            <small class="text-muted">URL: ${providersUrl}</small>
+          </div>
+        </div>
+      `;
     }
   }
 
